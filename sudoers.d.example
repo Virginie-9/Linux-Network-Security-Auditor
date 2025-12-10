@@ -1,0 +1,13 @@
+# --- Sudoers Rule for Nmap Network Scanner ---
+# 
+# This file provides the necessary NOPASSWD rule for the Systemd service
+# to execute the nmap-startup.sh script, which runs Nmap (requiring root privileges).
+# 
+# --------------------------------------------------------------------------
+# CRITICAL STEP:
+# 1. REPLACE <YOUR_USERNAME> with your actual Linux username.
+# 2. REPLACE /path/to/project/ with the ABSOLUTE path to your project folder.
+# 3. Place this file in /etc/sudoers.d/ or add the rule via 'visudo'.
+# --------------------------------------------------------------------------
+
+<YOUR_USERNAME> ALL=(root) NOPASSWD: /path/to/project/nmap-startup.sh

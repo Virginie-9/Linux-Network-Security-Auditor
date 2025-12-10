@@ -1,0 +1,16 @@
+[Unit]
+Description=Automated Nmap Network Scan and Inventory Update
+# Ensure the network is online before attempting the scan
+After=network-online.target 
+
+[Service]
+# Type 'oneshot' is suitable for tasks that run, complete, and exit.
+Type=oneshot 
+# !! USER MUST REPLACE /home/user/my-project WITH THE ABSOLUTE PATH !!
+WorkingDirectory=/home/user/my-project
+# The ExecStart command relies on the NOPASSWD rule defined in the sudoers.d.example file.
+ExecStart=/usr/bin/sudo /home/user/my-project/nmap-startup.sh
+
+[Install]
+# Ensures the service starts when the user logs into their session
+WantedBy=default.target
