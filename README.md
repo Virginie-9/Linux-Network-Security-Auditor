@@ -4,6 +4,8 @@ Automated tool to scan local network (Nmap) and maintain a persistent, versioned
 
 This project implements a lightweight and automated solution to scan a local network, identify connected devices (IP, MAC, and vendor), and maintain a persistent inventory in a SQLite database. The entire process is managed by a Systemd user service to ensure autonomous and non-interactive execution upon system startup.
 
+**WARNING: Do not do this on a network that you do not own.**
+
 ## 🚀 Key Features
 
 * **Network Scanning (Nmap):** Uses `nmap -sn` for fast host discovery on the local IP range.
